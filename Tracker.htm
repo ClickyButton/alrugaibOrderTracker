@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<!-- saved from url=(0038)https://www.aramex.com/track/shipments -->
+<html style="" class="js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths gr__aramex_com"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="stylesheet" href="./Track Shipments_files/project.css" type="text/css"><script type="text/javascript" async="" src="./Track Shipments_files/ec.js"></script><script type="text/javascript" async="" src="./Track Shipments_files/analytics.js"></script><script async="" src="./Track Shipments_files/fbevents.js"></script><script type="text/javascript" async="" src="./Track Shipments_files/f.txt"></script><script async="" src="./Track Shipments_files/gtm.js"></script><script type="text/javascript">var sf_appPath='/';</script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<title>
+	Track Shipments
+</title><meta name="description" content="Did you make a shipment with us at Aramex? Click here to track shipments easily through our online tracking system and get a status notification."><meta name="keywords" content="track shipments, track and trace international, tracking package, tracking phone number , track your shipment">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes">
+<meta name="author" content="">
+<meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- Always force latest IE rendering engine or request Chrome Frame -->
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+<!--[if IE]>
+      <link href="/Sitefinity/WebsiteTemplates/aramex/App_Themes/aramex/rga/style-ie.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<script src="./Track Shipments_files/vendors.js" type="text/javascript"></script>
+    <meta charset="UTF-8">
+ 
+    <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+  <script src="https://static.codepen.io/assets/editor/live/css_reload-2a5c7ad0fe826f66e054c6020c99c1e1c63210256b6ba07eb41d7a4cb0d0adab.js"></script>
+    
+    
+  
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  
+<meta name="msapplication-config" content="none"><script type="text/javascript">
+    
+    
+
+
+</script><meta name="Generator" content="Sitefinity 10.2.6601.0 PU"><link rel="canonical" href="https://www.aramex.com/track/shipments"><script> var promotionsOnScroll={}; dataLayer = [{"loggedInStatus":"NotLoggedIn","country":"Saudi Arabia","language":"English","userType":"Anonymous User","pageType":"Track Shipments","contentType":"Track","userId":"","contentCategory":"Track Shipments","userCRMAccountNo":""}]</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KLZ769');</script><style></style>
+    
+    <script type="text/javascript" src="csv1json.json"></script>
+    
+    <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+    
+    
+    
+    <script>
+  
+        
+        
+        function ProgInd(){
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        }
+        
+        
+</script>
+    
+    
+    <script>
+        
+        
+        
+        var json = (function () {
+    var json = null;
+    $.ajax({
+        'async': false,
+        'global': false,
+        'url': "https://api.myjson.com/bins/i03fq",
+        'dataType': "json",
+        'success': function (data) {
+            json = data;
+        }
+    });
+    return json;
+})(); 
+        
+        
+        $(document).keypress(function(e) {
+    var keycode = (e.keyCode ? e.keyCode : e.which);
+    if (keycode == '13') {
+        testF();
+    }
+});
+        
+      function testF()
+  {
+      
+      document.getElementById("HEADD").style.display = "contents";
+      document.getElementById("TrackOut").innerHTML = "";
+      var result = document.getElementById("TrackValue").value;
+      result = result.toUpperCase();
+      console.log(result);
+      var j = 0;
+      for (var i = 0; i < json.length; i++){
+          
+  if (json[i]["S.O"] == result ){
+	  console.log(json[i].DATE);	 
+      var Customer = json[i]["CUSTOMER NAME"];
+      Customer = Customer.substr(0,Customer.indexOf(' '));
+      const invoicenum = json[i].SO;
+	  const Item = json[i]["ITEM CODE"];  
+      const SUPPLIER = json[i].SUPPLIER;
+	  var ETA = json[i].ETA;
+	  const ETD = json[i].ETD;
+	  const Status = json[i].Status;
+	  console.log(json[i].ETD);
+	  console.log(json[i].ETA);
+	  
+	  if( ETA == "please check with delivery department" ){
+		  ETA = "N/A";
+	  }
+	  
+	  console.log(Customer);
+      
+      
+      
+      if(ETA != null && ETA != ""){
+          
+          if(  Customer != null && Customer != ""){
+              
+              		  document.getElementById("PUtt").innerHTML = "Hi " + Customer + ", Here is a list of your order ";
+
+          }
+          
+		  $("#TrackOut").append("<tr class='success'><td>"+"<a target='_blank' rel='noopener noreferrer' href='https://www.alrugaibfurniture.com/search?q="+Item+"'>"+Item+"</a></td>"+"<td>"+SUPPLIER+"</td>"+ "<td>"+ETA+"</td>"+ "<td>"+ETD+"</td>"+ "<td>"+Status+"</td>"+"</tr>");
+          
+          $("#TrackOut").append("<tr>"+"<td colspan='5'>"+
+                                
+                          
+      "<ol class='progress progress--medium'>"
+    + "<li class='is-complete' data-step='1'>Order Placed</li> "
+    + "<li class='is-complete' data-step='2'>Sent to Supplier</li> "
+    + "<li class='is-complete' data-step='3'>Shipped</li>"
+    + "<li class='is-active' data-step='4'>Arrived</li>"
+    + "<li data-step='5' class='progress__last'>Delivered</li></ol>"
+                                
+                                                 
+                                
+                                +"</td>"+"</tr>");
+          
+          /*+ "<ol class='progress progress--medium'>
+    + "<li class='is-complete' data-step='1'>Step 1</li> "
+    + "<li class='is-complete' data-step='2'>Step 1</li> "
+    + "<li class='is-active' data-step='3'>Step 2</li>"
+    + "<li data-step='4' class='progress__last'>Step 3</li></ol>"*/
+       
+
+	  }else {
+          
+          if(  Customer != null && Customer != ""){
+              
+              		  document.getElementById("PUtt").innerHTML = "Hi " + Customer + ", Here is a list of your order ";
+
+          }
+          $("#TrackOut").append("<tr class='danger'><td>"+"<a target='_blank' rel='noopener noreferrer' href='https://www.alrugaibfurniture.com/search?q="+Item+"'>"+Item+"</a></td>"+"<td>"+SUPPLIER+"</td>"+ "<td>No Date Available yet</td>"+ "</tr>");
+          
+          $("#TrackOut").append("<tr rowspan='5'>"+
+                                     
+      "<ol class='progress progress--medium'>"
+    + "<li class='is-complete' data-step='1'>Order Placed</li> "
+    + "<li class='is-complete' data-step='2'>Sent to Supplier</li> "
+    + "<li class='is-complete' data-step='3'>Shipped</li>"
+    + "<li class='is-active' data-step='4'>Arrived</li>"
+    + "<li data-step='5' class='progress__last'>Delivered</li></ol>"
+                                         
+                                
+                                +"</tr>");
+
+
+	  }
+      
+      console.log("Done");
+
+	  
+}else {
+    
+    j++;
+    
+}
+	  
+	  
+	  }
+      
+      if(i == j){
+         
+         document.getElementById("HEADD").style.display = "none";
+         document.getElementById("TrackOut").innerHTML = "No Order with this number , please contact Our Customer Service at Contactus@alrugaibfurniture.com";
+         
+         }
+  }
+  /*function testF()
+  {
+      
+      var result = document.getElementById("TrackValue").value;
+      console.log(result);
+      for (var i = 0; i < json.length; i++){
+          
+  if (json[i].SO == result ){
+	  console.log(json[i].DATE);	 
+const Customer = json[i]["CUSTOMER NAME"];
+const invoicenum = json[i].SO;
+const Status = json[i].ETA;
+	  console.log(Customer);
+      
+      if(Status != null || Status == ''){  
+document.getElementById("TrackOut").innerHTML =" Hi " + Customer + ", Your Order with invoice "+invoicenum+" Will arrive on "+Status+". ";
+	  }else {
+		  
+		  document.getElementById("TrackOut").innerHTML =" Hi " + Customer + ", Your Order with invoice "+result+" does not have an ETA yet";
+	  }
+      
+      console.log("Done");
+
+	  break;
+}else {
+		  
+		  document.getElementById("TrackOut").innerHTML =" No Order with this number , please contact Our Customer Service";
+	  }
+	  
+	  
+	  }
+  }*/
+        
+        
+</script>
+    
+    
+    <style>
+        
+.progress {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  color: #849397;
+}
+.progress > li {
+  position: relative;
+  display: table-cell;
+  text-align: center;
+  font-size: 0.5em;
+}
+.progress > li:before {
+  content: attr(data-step);
+  display: block;
+  margin: 0 auto;
+  background: #DFE3E4;
+  width: 3em;
+  height: 3em;
+  text-align: center;
+  margin-bottom: 0.25em;
+  line-height: 3em;
+  border-radius: 100%;
+  position: relative;
+  z-index: 1000;
+}
+.progress > li:after {
+  content: '';
+  position: absolute;
+  display: block;
+  background: #DFE3E4;
+  width: 100%;
+  height: 0.5em;
+  top: 1.25em;
+  left: 50%;
+  margin-left: 1.5em\9;
+/*  z-index: -1;*/
+}
+.progress > li:last-child:after {
+  display: none;
+}
+.progress > li.is-complete {
+  color: #2ECC71;
+}
+.progress > li.is-complete:before, .progress > li.is-complete:after {
+  color: #FFF;
+  background: #2ECC71;
+    margin-top: 9px;
+}
+.progress > li.is-active {
+  color: #3498DB;
+}
+.progress > li.is-active:before {
+  color: #FFF;
+  background: #3498DB;
+    margin-top: 9px;
+}
+
+/**
+ * Needed for IE8
+ */
+.progress__last:after {
+  display: none !important;
+}
+
+/**
+ * Size Extensions
+ */
+.progress--medium {
+  font-size: 1.2em;
+}
+
+.progress--large {
+  font-size: 2em;
+}
+
+/**
+ * Some Generic Stylings
+ */
+*, *:after, *:before {
+  box-sizing: border-box;
+    margin-top: 9px;
+}
+
+h1 {
+  margin-bottom: 1.5em;
+}
+
+.progress {
+/*  margin-bottom: 3em;*/
+}
+
+a {
+  color: #3498DB;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+
+ 
+    body, html {
+    background-color: white;
+        
+        line-height: 10.428571;
+}
+		
+		a {
+    color: #808284;
+    text-decoration: none;
+}
+    
+        
+        @media only screen and (max-width: 600px) {
+            .input-group.mb-3{
+                    width: 80%;
+    margin-left: 2%;
+                
+                
+            }
+            
+            .table{
+                
+                    font-size: x-small;
+                
+            }
+            
+            
+            
+            
+}
+    
+    </style>
+    
+    
+    </head>
+
+
+
+    <section class="sf_colsOut amx-section">
+        <div id="T0FBA7CBE009_Col00" class="sf_colsIn amx-container">
+        <div id="TAB72D12C001_Col00" class="sf_colsIn amx-large-block-4-12 amx-h-hide-on-small amx-h-show-on-large" data-placeholder-label="33.33333%">
+<div id="TAB72D12C002_Col00" class="sf_colsIn amx-large-span-4-4" data-placeholder-label="100%">
+
+        
+            
+        </div>
+
+<div id="TAB72D12C004_Col00" class="sf_colsIn amx-large-span-4-4" data-placeholder-label="100%" style="margin-top:0;margin-bottom:0">            
+        </div>
+<div id="TAB72D12C012_Col00" class="sf_colsIn amx-large-span-4-4" data-placeholder-label="100%" style="margin-top:0;margin-bottom:0">            
+        </div>
+<div id="TAB72D12C013_Col00" class="sf_colsIn amx-large-span-4-4" data-placeholder-label="100%" style="margin-top:0;margin-bottom:0">            
+        </div>
+<div id="TAB72D12C021_Col00" class="sf_colsIn amx-large-span-4-4" data-placeholder-label="100%" style="margin-top:0;margin-bottom:0">            
+        </div>
+        </div>
+    
+        <div id="TAB72D12C001_Col01" class="sf_colsIn amx-small-block-4-4 amx-medium-block-8-8 amx-large-block-8-12" data-placeholder-label="66.66667%">
+<div id="TAB72D12C005_Col00" class="sf_colsIn amx-small-block-4-4 amx-medium-span-8-8 amx-large-span-8-8" data-placeholder-label="100%">
+            <img src="https://cdn.shopify.com/s/files/1/0773/5495/files/Rugaib_large_100_38f70fb9-fb82-43a6-91c2-465c4e3beb20_450x@2x.png?v=1518425585" style="    width: 50%;
+    margin-left: 25%;">
+
+        <div class="amx-module amx-md-panel  amx-md-panel-small amx-cat-default amx-md-shipment-overview " data-itemid="C010" amx-gtm-promotion="{&quot;id&quot;:&quot;C010&quot;,&quot;name&quot;:&quot;Track Shipments&quot;,&quot;creative&quot;:&quot;Website Content&quot;}">
+            
+
+            
+            <div class="content--header">
+                    <div class="panel-title" style="color: #cfaa72">Order Tracking</div>
+                    <i class="panel-icon" style="background-color: #cfaa72"></i>
+                    <h2 class="header">
+                        Track Your Special Order
+                    </h2>
+                <div class="input-group mb-3">
+  <input type="text" class="form-control" placeholder="Input your Invoice Number" id="TrackValue" aria-label="Invoice Number" aria-describedby="basic-addon2">
+  <div class="input-group-append">
+    <button id="TrackButton" class="btn btn-outline-secondary" onclick="testF()" type="button" style="border: 1px solid black;background-color: #e8e8e8eb;" >Track</button>
+      
+  </div>
+</div>
+                <h2 id="PUtt" class="" style="    text-align: left;
+    margin-top: 3%;
+    margin-bottom: 1%;">
+                    </h2>
+                <h2  class="">
+                    
+                          <table class="table">
+    <thead>
+      <tr id="HEADD" style="display: none;">
+        <th>Item Code</th>
+        <th>Supplier</th>
+        <th>Arrival Date</th>
+        <th>Delivery Date</th>
+       <th>Status</th>
+      </tr>
+    </thead>
+    <tbody id="TrackOut">
+      
+    </tbody>
+  </table>
+         </h2>           
+            
+            </div>
+            <div class="content--body amx-h-hide-on-small amx-h-show-on-medium amx-margin-bottom40">
+                
+                <p class="desc" data-module-name="amx-line-clamp" data-lines="3">
+                    </p><p>For Further Information Please Cntact us  at contactus@alrugaibfurniture.com</p>
+                <p></p>
+            </div>
+
+
+        </div>
+
+     
+</div>
+   
+
+        </div>
+    </section>
+    
+
+<div class="amx-cp-overlay" data-module-name="amx-overlay"></div>
+<script type="text/javascript">
+$(document).ready(function() {
+    // scroll to top
+    $('#footer-back-to-top').click(function () {
+        $('body,html').animate({
+            scrollTop: 0,
+        }, 600);
+        return false;
+    });
+});
+</script>
+
+
+
+<script type="text/javascript" src="./Track Shipments_files/main.js"></script>
+            
+        </div>
+        
+    
+
+</body></html>
