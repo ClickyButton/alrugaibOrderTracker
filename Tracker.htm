@@ -1,6 +1,12 @@
+
+
 <!DOCTYPE html>
 <!-- saved from url=(0038)https://www.aramex.com/track/shipments -->
-<html style="" class="js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths gr__aramex_com"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="stylesheet" href="./Track Shipments_files/project.css" type="text/css"><script type="text/javascript" async="" src="./Track Shipments_files/ec.js"></script><script type="text/javascript" async="" src="./Track Shipments_files/analytics.js"></script><script async="" src="./Track Shipments_files/fbevents.js"></script><script type="text/javascript" async="" src="./Track Shipments_files/f.txt"></script><script async="" src="./Track Shipments_files/gtm.js"></script><script type="text/javascript">var sf_appPath='/';</script>
+<html style="" class="js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths gr__aramex_com">
+    
+    <body onload="">
+    
+    <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="stylesheet" href="./Track Shipments_files/project.css" type="text/css"><script type="text/javascript" async="" src="./Track Shipments_files/ec.js"></script><script type="text/javascript" async="" src="./Track Shipments_files/analytics.js"></script><script async="" src="./Track Shipments_files/fbevents.js"></script><script type="text/javascript" async="" src="./Track Shipments_files/f.txt"></script><script async="" src="./Track Shipments_files/gtm.js"></script><script type="text/javascript">var sf_appPath='/';</script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<title>
 	Track Shipments
@@ -21,6 +27,8 @@
     <meta charset="UTF-8">
  
     <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    
+    <script src="StJ.js"></script>
 
   <script src="https://static.codepen.io/assets/editor/live/css_reload-2a5c7ad0fe826f66e054c6020c99c1e1c63210256b6ba07eb41d7a4cb0d0adab.js"></script>
     
@@ -77,23 +85,9 @@
     
     <script>
         
+      
         
-        
-        var json = (function () {
-    var json = null;
-    $.ajax({
-        'async': false,
-        'global': false,
-        'url': "https://api.myjson.com/bins/i03fq",
-        'dataType': "json",
-        'success': function (data) {
-            json = data;
-        }
-    });
-    return json;
-})(); 
-        
-        
+
         $(document).keypress(function(e) {
     var keycode = (e.keyCode ? e.keyCode : e.which);
     if (keycode == '13') {
@@ -101,18 +95,27 @@
     }
 });
         
+        
+        
+      var SheetData;
+        
+        
+        var json = test_getJsonArrayFromData();
+        
+        
       function testF()
   {
-      
+      console.log(json);
       document.getElementById("HEADD").style.display = "contents";
       document.getElementById("TrackOut").innerHTML = "";
       var result = document.getElementById("TrackValue").value;
       result = result.toUpperCase();
       console.log(result);
+
       var j = 0;
       for (var i = 0; i < json.length; i++){
           
-  if (json[i]["S.O"] == result ){
+  if (json[i]["S.O #"] == result ){
 	  console.log(json[i].DATE);	 
       var Customer = json[i]["CUSTOMER NAME"];
       Customer = Customer.substr(0,Customer.indexOf(' '));
